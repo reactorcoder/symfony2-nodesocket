@@ -254,7 +254,7 @@ To send event message via socket using event name use:
     $event->send();
 ```
 
-Step 8: Emit user event
+Step 9: Emit user event
 -----------------------
 
 To send event message via socket using user ID and if you previously set SetUserId()
