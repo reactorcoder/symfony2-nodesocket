@@ -218,7 +218,7 @@ A public resource is located under Reactorcoder/Symfony2NodesocketBundle/Resourc
 Step 7: Base class in controllers
 ---------------------------------
 
-In your controller:
+In your controller (sending events):
 
 Append a code after login function, load nodesocket class to register session and
   authenticate user into node socket. This should be done only once on login:
@@ -230,13 +230,15 @@ class DefaultController extends Controller
 {
     $nodesocket = new NodeSocket;
 
-    $event = $this->_nodesocket->init()->getFrameFactory()->createAuthenticationFrame();
+    $event = $nodesocket->init()->getFrameFactory()->createAuthenticationFrame();
     $event->setUserId((int)1);  // Current UserID after login
     $event->send();
 
     return $this->render(...);  // This should be load assets from Step 6
 }
 ```
+
+For receiving events use template.
 
 Step 8: Emit global event
 -------------------------
@@ -251,6 +253,9 @@ To send event message via socket using event name use:
     $event['message'] = 'Hello';
     $event->send();
 ```
+
+Step 8: Emit user event
+-----------------------
 
 To send event message via socket using user ID and if you previously set SetUserId()
  on login use:
