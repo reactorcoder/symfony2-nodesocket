@@ -61,7 +61,7 @@ class TwigExtension extends \Twig_Extension
     
     public function renderHeaderStylesheet()
     {
-        $out = '<link rel="stylesheet" href="/bundles/reactorcodersymfony2nodesocket/css/jquery.gritter.min.css" type="text/css"></script>';
+        $out = '<link rel="stylesheet" href="/bundles/reactorcodersymfony2nodesocket/css/jquery.gritter.min.css" type="text/css">';
         
         return $out;
     }

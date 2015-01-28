@@ -246,7 +246,9 @@ Step 8: Emit global event
 To send event message via socket using event name use:
 
 ```php
-    $event = $this->_nodesocket->init()->getFrameFactory()->createEventFrame();
+    $nodesocket = new NodeSocket;
+
+    $event = $nodesocket->init()->getFrameFactory()->createEventFrame();
     $event->setEventName('message');
     $event['url'] = "uri";
     $event['time'] = date("d.m.Y H:i");
@@ -261,7 +263,9 @@ To send event message via socket using user ID and if you previously set SetUser
  on login use:
 
 ```php
-    $event = $this->_nodesocket->init()->getFrameFactory()->createUserEventFrame();
+    $nodesocket = new NodeSocket;
+
+    $event = $nodesocket->init()->getFrameFactory()->createUserEventFrame();
     $event->setUserId((int)2); // Send to another user
     $event->setEventName('message');
     $event['url'] = "uri";
