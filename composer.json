@@ -7,24 +7,21 @@
         "email" : "marin@sagovac.com"
     }],
     "keywords" : [
-        "node node.js react.io socket.io elephant.io npm emiter"
+        "node", "node.js", "react.io", "socket.io", "elephant.io", "npm", "emiter"
     ],
     "license" : [
         "MIT"
     ],
     "require": {
         "php": ">=5.2.0",
-        "twig": "~1.18"
+        "twig": "~1.18",
+	"symfony/framework-bundle": "~2.0",
+	"symfony/console": "~2.0"	
     },
     "autoload" : {
         "psr-0" : {
             "Reactorcoder\\Symfony2NodesocketBundle" : ""
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": false,
-    "stability-flags": [],
-    "target-dir" : "Reactorcoder/Symfony2NodesocketBundle",
-    "repositories" : [{
-    }]
+    "target-dir" : "Reactorcoder/Symfony2NodesocketBundle"
 }
