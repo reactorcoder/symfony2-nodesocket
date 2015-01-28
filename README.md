@@ -78,7 +78,7 @@ Step 3: Cache and logs files
 Make sure that in app directory cache and logs files are writeable. A bundle 
 requires logs directory to store node socket emit and action events.
 
-Step 3: Add configuration
+Step 4: Add configuration
 -------------------------
 
 Add a configuration attributes inside config.yml as sample:
@@ -111,7 +111,7 @@ A service uses log file to store node events, triggers, callbacks, messages and
  status of node service. By default node starts as background service inside 
 server.js file.
 
-Step 4: Command event service
+Step 5: Command event service
 -----------------------------
 
 To staring a node server use console to activate service:
@@ -164,7 +164,7 @@ Then find a symfony node service `node server.js` and manually kill it using
 $ kill -9 [PID]
 ```
 
-Step 5: Put assets to your template resource
+Step 6: Put assets to your template resource
 --------------------------------------------
 
 For loading socket.io and emiting events you need to put a template code inside
@@ -215,7 +215,7 @@ A public resource is located under Reactorcoder/Symfony2NodesocketBundle/Resourc
  directory.
 
 
-Step 6: Base class in controllers
+Step 7: Base class in controllers
 ---------------------------------
 
 In your controller:
@@ -234,11 +234,11 @@ class DefaultController extends Controller
     $event->setUserId((int)1);  // Current UserID after login
     $event->send();
 
-    return $this->render(...);  // This should be load assets from Step 5
+    return $this->render(...);  // This should be load assets from Step 6
 }
 ```
 
-Step 6: Emit global event
+Step 8: Emit global event
 -------------------------
 
 To send event message via socket using event name use:
@@ -266,9 +266,9 @@ To send event message via socket using user ID and if you previously set SetUser
 ```
 
 User will receive if is previously logged using createAuthenticationFrame() as user ID 2. 
- A code sample is for authentication on Step 5.
+ A code sample is for authentication on Step 6.
 
-To receive message just call template from Step 5.
+To receive message just call template from Step 6.
 
 Example
 -------
