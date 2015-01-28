@@ -24,10 +24,5 @@
     "minimum-stability": "dev",
     "target-dir" : "Reactorcoder/Symfony2NodesocketBundle",
     "repositories" : [{
-    }],
-     "extra": {
-		"branch-alias": {
-			"dev-master": "1.0-dev"
-		}
-	}
+    }]
 }
