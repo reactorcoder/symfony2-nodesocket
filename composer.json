@@ -21,7 +21,7 @@
             "Reactorcoder\\Symfony2NodesocketBundle" : ""
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "target-dir" : "Reactorcoder/Symfony2NodesocketBundle",
     "repositories" : [{
     }]
