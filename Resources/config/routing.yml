@@ -1,0 +1,11 @@
+reactorcoder_symfony2_nodesocket_homepage:
+    path:     /nodesocket/login
+    defaults: { _controller: ReactorcoderSymfony2NodesocketBundle:Default:login }
+
+reactorcoder_symfony2_nodesocket_notification:
+    path:     /nodesocket/notification
+    defaults: { _controller: ReactorcoderSymfony2NodesocketBundle:Default:index }
+
+reactorcoder_symfony2_nodesocket_eventlistener:
+    path:     /nodesocket/eventlistener
+    defaults: { _controller: ReactorcoderSymfony2NodesocketBundle:Default:eventlistener }

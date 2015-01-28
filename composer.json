@@ -1,0 +1,32 @@
+{
+    "name" : "reactorcoder/symfony2-nodesocket",
+    "description" : "A symfony package bundle for event-driven socket application.",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Marin Sagovac",
+        "email" : "marin@sagovac.com"
+    }],
+    "keywords" : [
+        "node node.js react.io socket.io elephant.io npm emiter"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require": {
+        "php": ">=5.2.0",
+        "twig": "~1.18"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Reactorcoder\\Symfony2NodesocketBundle" : ""
+        }
+    },
+    "target-dir" : "Reactorcoder/Symfony2NodesocketBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0.0"
+        }
+    }
+}

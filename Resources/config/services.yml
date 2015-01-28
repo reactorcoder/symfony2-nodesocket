@@ -1,0 +1,7 @@
+services:
+    app.twig_extension:
+        class: Reactorcoder\Symfony2NodesocketBundle\Twig\TwigExtension
+        arguments:
+            - @service_container
+        tags:
+            - { name: twig.extension }

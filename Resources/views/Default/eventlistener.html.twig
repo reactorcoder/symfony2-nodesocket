@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    {{ codereactor_nodesocket_css() }}
+    {{ codereactor_nodesocket_header_js() }}
+</head>
+<body>
+    <h3>EventListener (Socket.io)</h3>
+    
+    <!-- HERE IS YOUR BODY -->
+    
+    {{ codereactor_nodesocket_body_js() }}
+
+    <script type="text/javascript">
+
+        var socket = new NodeSocket();
+        socket.debug(true);
+
+        socket.onConnect(function () {
+                console.log('Connection to socket successfully');
+        });
+
+        socket.onDisconnect(function () {
+                console.log('On lost connection');
+        });
+
+        socket.on('message', function (data) {
+                console.log('An event emit. Input data:'+data);
+        });
+
+    </script>
+    
+</body>
+</html>
