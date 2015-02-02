@@ -163,12 +163,16 @@ abstract class AFrame extends Controller implements \ArrayAccess {
 		return true;
 	}
 
+        /**
+         *  @description Here send _userSid
+         * 
+         * 
+         */
 	protected function emit() {
 		$client = $this->createClient();
 		$client->origin = $this->_nodeSocket->getOrigin();
 		$client->sendCookie = true;
 		$client->cookie = implode('; ', array(
-			//'PHPSESSID=' . \Yii::app()->session->getSessionID(),  // Yii
                         'PHPSESSID=' . $this->_nodeSocket->_userSid,
 			'expires=' . (time() + $this->_nodeSocket->cookieLifeTime)
 		));

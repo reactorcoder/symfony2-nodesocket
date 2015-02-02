@@ -1,7 +1,13 @@
 Changelog
 =========
 
-### 1.0.0  (2014-01-27)
+### 1.0.0  (2015-02-02)
+
+* Using services to call events and emiters
+* Factory binding to configurations
+* Default configurations
+
+### 1.0.0  (2015-02-02)
 
 * Initial release
 * Command socket service with introduction to manage node services

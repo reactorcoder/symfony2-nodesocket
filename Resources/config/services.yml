@@ -1,3 +1,7 @@
+parameters:
+    nodesocket.class: Reactorcoder\Symfony2NodesocketBundle\Controller\InitController
+    my_mailer.transport: sendmail
+
 services:
     app.twig_extension:
         class: Reactorcoder\Symfony2NodesocketBundle\Twig\TwigExtension
@@ -5,3 +9,13 @@ services:
             - @service_container
         tags:
             - { name: twig.extension }
+
+    service_nodesocket:
+        class: Reactorcoder\Symfony2NodesocketBundle\Loader
+        calls:
+            - [setRequest, [@request_stack]]
+        arguments:
+            - @service_container
+            - "%node_config%"
+            #- @service_id
+            #- "some_value"

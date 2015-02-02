@@ -183,6 +183,8 @@ Before body tag put socket.io listener for incoming emits and status of socket:
 ```php
 {{ codereactor_nodesocket_body_js() }}
 
+    {{ codereactor_nodesocket_body_js() }}
+
     <script type="text/javascript">
 
         var socket = new NodeSocket();
@@ -197,7 +199,9 @@ Before body tag put socket.io listener for incoming emits and status of socket:
         });
 
         socket.on('message', function (data) {
-                console.log('An event emit. Input data:'+data);
+                console.log('An event emit. Input data:');
+                // Here you receive data from emits
+                console.log(data);
         });
 
     </script>
@@ -230,7 +234,7 @@ class DefaultController extends Controller
 {
     $nodesocket = new NodeSocket;
 
-    $event = $nodesocket->init()->getFrameFactory()->createAuthenticationFrame();
+    $event = $this->get('service_nodesocket')->getFrameFactory()->createAuthenticationFrame();
     $event->setUserId((int)1);  // Current UserID after login
     $event->send();
 
@@ -246,9 +250,7 @@ Step 8: Emit global event
 To send event message via socket using event name use:
 
 ```php
-    $nodesocket = new NodeSocket;
-
-    $event = $nodesocket->init()->getFrameFactory()->createEventFrame();
+    $event = $this->get('service_nodesocket')->getFrameFactory()->createEventFrame();
     $event->setEventName('message');
     $event['url'] = "uri";
     $event['time'] = date("d.m.Y H:i");
@@ -265,7 +267,7 @@ To send event message via socket using user ID and if you previously set SetUser
 ```php
     $nodesocket = new NodeSocket;
 
-    $event = $nodesocket->init()->getFrameFactory()->createUserEventFrame();
+    $event = $this->get('service_nodesocket')->getFrameFactory()->createEventFrame();
     $event->setUserId((int)2); // Send to another user
     $event->setEventName('message');
     $event['url'] = "uri";

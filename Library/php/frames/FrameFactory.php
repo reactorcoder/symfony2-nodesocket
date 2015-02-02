@@ -22,7 +22,7 @@ class FrameFactory implements IFrameFactory
 	/**
 	 * @param \NodeSocket $transport
 	 */
-	public function __construct(\Reactorcoder\Symfony2NodesocketBundle\Library\php\NodeSocket $transport) {
+	public function __construct($transport) {
 		$this->_nodeSocket = $transport;
 	}
         

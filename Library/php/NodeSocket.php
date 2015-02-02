@@ -123,26 +123,12 @@ class NodeSocket
     public $_userSid;
     
     
-    public function init()
-    {
-        
-        $this->host = "intranet_2.2";
-        
-		require_once __DIR__ . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, array(
-			'..',
-			'vendor',
-			'elephant.io',
-			'lib',
-			'ElephantIO',
-			'Client.php'
-		));
-        
-
-        //var_dump($this->getParameter("node_config")); exit;
-        
-        $this->allowedServerAddresses = '127.0.0.1';
-        
-        //$this->allowedServerAddresses = $this->params['allowedServers'];
+    public function init($configuration)
+    {        
+        foreach ($configuration as $config_key => $config_val)
+        {
+            $this->$config_key = $config_val;
+        }
         
         require_once   __DIR__ . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, array(
 			'..',
@@ -156,8 +142,6 @@ class NodeSocket
         $this->_frameFactory = new FrameFactory($this);
         
         return $this;
-        
-//        var_dump(\ElephantIO\Client()); exit;
     }
     
     /**
@@ -179,7 +163,7 @@ class NodeSocket
      */
     public function getOrigin() {
         // $origin = $this->host . ':*';
-
+        
         $origin = '';
         if ($this->origin) {
             $o = array();
@@ -197,9 +181,6 @@ class NodeSocket
         if (!$origin) {
             $origin = $this->host . ':*';
         }
-        
-        // Treba boti: intranet_2.2:*
-        return 'intranet_2.2:*';
         
         return $origin;
     }
