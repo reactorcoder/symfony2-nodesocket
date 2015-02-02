@@ -1,7 +1,7 @@
 Changelog
 =========
 
-### 1.0.0  (2015-02-02)
+### 1.0.11  (2015-02-02)
 
 * Using services to call events and emiters
 * Factory binding to configurations
