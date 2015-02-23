@@ -1,6 +1,10 @@
 Changelog
 =========
 
+### 1.0.12 (2015-02-23)
+
+* jQuery gritter can be activate via configuration
+
 ### 1.0.11  (2015-02-02)
 
 * Using services to call events and emiters

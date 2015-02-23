@@ -35,6 +35,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('sessionVarName')->defaultValue('')->end()
                 ->scalarNode('socketLogFile')->defaultValue('')->end()
                 ->scalarNode('pidFile')->defaultValue('')->end()
+                ->scalarNode('gritter')->defaultValue('')->end()
                 //->booleanNode('cookie')->defaultTrue()->end()
             ->end()
             ;

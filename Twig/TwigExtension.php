@@ -53,17 +53,27 @@ class TwigExtension extends \Twig_Extension
     }
     
     public function renderHeaderJavascript()
-    {        
-        $out = '<script src="/bundles/reactorcodersymfony2nodesocket/js/jquery.gritter.min.js" type="text/javascript"></script>';
+    {   
+        if ($this->config['gritter'])
+        {
+            $out = '<script src="/bundles/reactorcodersymfony2nodesocket/js/jquery.gritter.min.js" type="text/javascript"></script>';
         
-        return $out;
+            return $out;
+        }
+        
+        return; 
     }
     
     public function renderHeaderStylesheet()
     {
-        $out = '<link rel="stylesheet" href="/bundles/reactorcodersymfony2nodesocket/css/jquery.gritter.min.css" type="text/css">';
+        if ($this->config['gritter'])
+        {
+            $out = '<link rel="stylesheet" href="/bundles/reactorcodersymfony2nodesocket/css/jquery.gritter.min.css" type="text/css">';
         
-        return $out;
+            return $out;
+        }
+        
+        return;
     }
     
     public function renderBodyJs()

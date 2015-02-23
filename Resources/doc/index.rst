@@ -94,6 +94,7 @@ reactorcoder_symfony2_nodesocket:
     sessionVarName: null                    #
     socketLogFile:  null                    # A log path file for process ID
     pidFile: null                           # runtime PID file
+    gritter: false                          # Show message box popup
 ```
 
 Make sure that your hostname is same in your project from [yourhostname].
